@@ -1,0 +1,6 @@
+name: Rankup
+version: @version@
+main: io.github.redplugins.rankup.Rankup
+api-version: 1.13
+authors: [neonzio, wesauis]
+website: https://github.com/Red-Plugins/Rankup
