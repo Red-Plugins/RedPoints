@@ -1,4 +1,4 @@
-package io.github.redplugins.rankup.database;
+package io.github.redplugins.cash.database;
 
 public interface Database {
 	
@@ -8,7 +8,7 @@ public interface Database {
 	String getUser();
 	String getPassword();
 	String getUrl();
-	void openConnection();
+	void initialize();
 	void closeConnection();
 	void createTable();
 	int getPort();

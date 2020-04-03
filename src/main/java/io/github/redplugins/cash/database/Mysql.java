@@ -1,17 +1,19 @@
-package io.github.redplugins.rankup.database;
+package io.github.redplugins.cash.database;
 
 import java.sql.*;
+
+import io.github.redplugins.cash.utils.Configuration;
 
 public class Mysql implements Database {
 	
 	private String url;
-	private Connection connection;
-	private String tableName = ""; //Rankup.getInstance().config.getString("Database.Table");
-	private String hostAdress = ""; //Rankup.getInstance().config.getString("Database.Host");
-	private String dataBase = ""; //Rankup.getInstance().config.getString("Database.Database");
-	private String userName = ""; //Rankup.getInstance().config.getString("Database.Username");
-	private String password = ""; //Rankup.getInstance().config.getString("Database.Password");
-	private int portAdress = 1; //Rankup.getInstance().config.getInt("Database.Port");
+	public Connection connection;
+	public String tableName = Configuration.config.getYaml().getString("Database.Table");
+	private String hostAdress = Configuration.config.getYaml().getString("Database.Host");
+	private String dataBase = Configuration.config.getYaml().getString("Database.Database");
+	private String userName = Configuration.config.getYaml().getString("Database.Username");
+	private String password = Configuration.config.getYaml().getString("Database.Password");
+	private int portAdress = Configuration.config.getYaml().getInt("Database.Port");
 	
 	@Override
 	public String getTableName() {
@@ -44,15 +46,15 @@ public class Mysql implements Database {
 	}
 
 	@Override
-	public void openConnection() {
+	public void initialize() {
 		this.url = "jdbc:mysql://" + getHost() + ":" + getPort() + "/" + getDatabase();
 		try {
 			Class.forName("org.sqlite.JDBC");
 			connection = DriverManager.getConnection(this.url, getUser(), getPassword());
-			System.out.println("[RedRankup] Conexão montada com sucesso. (Mysql)");
+			System.out.println("[ReflexCash] Conexão montada com sucesso. (Mysql)");
 			createTable();
 		} catch (Exception e) {
-			System.out.println("[RedRankup] FALHA! Erro ao conectar. (Mysql)");
+			System.out.println("[ReflexCash] FALHA! Erro ao conectar. (Mysql)");
 			closeConnection();
 		}
 	}
@@ -64,7 +66,7 @@ public class Mysql implements Database {
 				this.connection.close();
 				this.connection = null;
 			} catch (SQLException e) {
-				System.out.println("[RedRankup] FALHA! Erro ao desconectar. (Mysql)");
+				System.out.println("[ReflexCash] FALHA! Erro ao desconectar. (Mysql)");
 				e.printStackTrace();
 			}
 		}
@@ -72,8 +74,16 @@ public class Mysql implements Database {
 
 	@Override
 	public void createTable() {
-		
-	}
+		PreparedStatement st = null;
+        try {
+            st = connection.prepareStatement("CREATE TABLE IF NOT EXISTS `" + tableName + "` (`id` INT NOT NULL AUTO_INCREMENT, `user` VARCHAR(24) NULL, `amount` INT NULLPRIMARY KEY (`id`));");
+            st.executeUpdate();
+            st.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("[ReflexCash] Erro ao criar a tabela. (Mysql)");
+        }
+    }
 
 	@Override
 	public int getPort() {
