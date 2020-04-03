@@ -1,0 +1,6 @@
+name: ReflexCash
+main: me.neon.redcash.Cash
+version: 1.0
+author: [neonzio]
+commands:
+  cash:

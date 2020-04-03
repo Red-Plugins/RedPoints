@@ -1,7 +1,0 @@
-name: ReflexCash
-version: @version@
-main: io.github.redplugins.cash.Cash
-authors: [neonzio, wesauis]
-website: https://github.com/Red-Plugins/RedCash
-commands:
-  cash:
