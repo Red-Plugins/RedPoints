@@ -16,7 +16,7 @@ public class CashManager {
 	public boolean containsAccount(String player) {
 		PreparedStatement st = null;
 		try {
-			st = Mysql.connection.prepareStatement("SELECT * FROM `" + tableName + "` WHERE `user` = ?");
+			st = Mysql.getInstance().getConnection().prepareStatement("SELECT * FROM `" + tableName + "` WHERE `user` = ?");
 			st.setString(1, player.toLowerCase());
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {
@@ -31,7 +31,7 @@ public class CashManager {
 	public int getAccounts(ArrayList<String> top) {
 		PreparedStatement st = null;
 		try {
-			st = Mysql.connection.prepareStatement("SELECT * FROM `" + tableName + "` ORDER BY `amount` DESC");
+			st = Mysql.getInstance().getConnection().prepareStatement("SELECT * FROM `" + tableName + "` ORDER BY `amount` DESC");
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {
 				top.add(rs.getString("user"));
@@ -49,7 +49,7 @@ public class CashManager {
 	public void createAccount(String player) {
 		PreparedStatement st = null;
 		try {
-			st = Mysql.connection.prepareStatement("INSERT INTO `" + tableName + "`(`user`, `amount`) VALUES (?,?)");
+			st = Mysql.getInstance().getConnection().prepareStatement("INSERT INTO `" + tableName + "`(`user`, `amount`) VALUES (?,?)");
 			st.setString(1, player.toLowerCase());
 			st.setDouble(2, 0);
 			st.executeUpdate();
@@ -62,7 +62,7 @@ public class CashManager {
 		if (containsAccount(player)) {
 			PreparedStatement st = null;
 			try {
-				st = Mysql.connection.prepareStatement("UPDATE `" + tableName + "` SET `amount` = ? WHERE `user` = ?");
+				st = Mysql.getInstance().getConnection().prepareStatement("UPDATE `" + tableName + "` SET `amount` = ? WHERE `user` = ?");
 				st.setInt(1, amount);
 				st.setString(2, player.toLowerCase());
 				st.executeUpdate();
@@ -76,7 +76,7 @@ public class CashManager {
 		if (containsAccount(player)) {
 			PreparedStatement st = null;
 			try {
-				st = Mysql.connection.prepareStatement("SELECT * FROM `" + tableName + "` WHERE `user` = ?");
+				st = Mysql.getInstance().getConnection().prepareStatement("SELECT * FROM `" + tableName + "` WHERE `user` = ?");
 				st.setString(1, player.toLowerCase());
 				ResultSet rs = st.executeQuery();
 				while (rs.next()) {
@@ -112,7 +112,7 @@ public class CashManager {
 		if (containsAccount(player)) {
 			PreparedStatement st = null;
 			try {
-				st = Mysql.connection.prepareStatement("DELETE FROM `" + tableName + "` WHERE `user` = ?");
+				st = Mysql.getInstance().getConnection().prepareStatement("DELETE FROM `" + tableName + "` WHERE `user` = ?");
 				st.setString(1, player.toLowerCase());
 				st.executeUpdate();
 			} catch (SQLException e) {
@@ -124,7 +124,7 @@ public class CashManager {
 	public List<String> updateTop(ArrayList<String> topList) {
 		PreparedStatement st = null;
 		try {
-			st = Mysql.connection.prepareStatement("SELECT * FROM `" + tableName + "` ORDER BY `amount` DESC");
+			st = Mysql.getInstance().getConnection().prepareStatement("SELECT * FROM `" + tableName + "` ORDER BY `amount` DESC");
 			ResultSet rs = st.executeQuery();
 			int i = 0;
 			while (rs.next()) {

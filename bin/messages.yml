@@ -1,0 +1,30 @@
+NoPlayer: "Comandos apenas no servidor!"
+NoPermission: "§cVocê não tem permissão!"
+ReportUsage: "§cUse: /reportar (JOGADOR)."
+NonExistentPlayer: "§cJogador inexistente!"
+PlayerReported: "§aJogador reportado com sucesso!"
+DidNotPass: "§cAguarde %time% segundos para reportar novamente..."
+CashSetUsage: "§cUse: /cash set (jogador) (quantia)."
+CashRemoveUsage: "§cUse: /cash remove (jogador) (quantia)."
+CashAddUsage: "§cUse: /cash add (jogador) (quantia)."
+CashHelpMessage:
+- 'Use: /cash set (jogador) (quantia).'
+- 'Use: /cash remove (jogador) (quantia).'
+- 'Use: /cash add (jogador) (quantia).'
+- 'Use: /cash (jogador).'
+- 'Use: /cash top.'
+InvalidNumber: "§cNúmero inválido."
+CashAddMessage: "§aCash adicionado com sucesso."
+CashRemoveMessage: "§aCash removido com sucesso."
+CashSetMessage: "§aCash setado com sucesso."
+CashMessage: "§aCash de §f%player% §a:§f %amount% §a."
+CashMessage2: "§aCash:§f %amount% §a."
+CashStatsMessage:
+- '§f---------------------------'
+- '                             '
+- '§aMysql: §f%mysqlstats%      '
+- '§aAccounts: §f%mysqlaccounts%'
+- '§aVersion: §f1.0             '
+- '§aAuthor: §fzSrNeon_         '
+- '                             '
+- '§f---------------------------' 

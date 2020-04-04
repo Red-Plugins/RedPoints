@@ -1,13 +1,14 @@
 package me.neon.redcash.database;
 
-import java.sql.*; 
+import java.sql.*;  
 
 import me.neon.redcash.Cash;
 
 public class Mysql implements Database {
 	
 	private String url;
-	public static Connection connection;
+	private static Connection connection;
+	private static Mysql instance = new Mysql();
 	private String tableName = Cash.getInstance().config.getString("Database.Table");
 	private String hostAdress = Cash.getInstance().config.getString("Database.Host");
 	private String dataBase = Cash.getInstance().config.getString("Database.Database");
@@ -15,36 +16,10 @@ public class Mysql implements Database {
 	private String password = Cash.getInstance().config.getString("Database.Password");
 	private int portAdress = Cash.getInstance().config.getInt("Database.Port");
 	
-	@Override
-	public String getTableName() {
-		return tableName;
+	public static Mysql getInstance() {
+		return instance;
 	}
 	
-	@Override
-	public String getHost() {
-		return hostAdress;
-	}
-
-	@Override
-	public String getDatabase() {
-		return dataBase;
-	}
-
-	@Override
-	public String getUser() {
-		return userName;
-	}
-
-	@Override
-	public String getPassword() {
-		return password;
-	}
-
-	@Override
-	public String getUrl() {
-		return url;
-	}
-
 	@Override
 	public void initialize() {
 		this.url = "jdbc:mysql://" + getHost() + ":" + getPort() + "/" + getDatabase();
@@ -80,7 +55,42 @@ public class Mysql implements Database {
             System.out.println("[ReflexCash] Erro ao criar a tabela. (Mysql)");
         }
     }
+	
+	@Override
+	public Connection getConnection() {
+		return connection;
+	}
+	
+	@Override
+	public String getTableName() {
+		return tableName;
+	}
+	
+	@Override
+	public String getHost() {
+		return hostAdress;
+	}
 
+	@Override
+	public String getDatabase() {
+		return dataBase;
+	}
+
+	@Override
+	public String getUser() {
+		return userName;
+	}
+
+	@Override
+	public String getPassword() {
+		return password;
+	}
+
+	@Override
+	public String getUrl() {
+		return url;
+	}
+	
 	@Override
 	public int getPort() {
 		return portAdress;
