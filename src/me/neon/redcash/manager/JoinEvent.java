@@ -8,7 +8,7 @@ public class JoinEvent implements Listener {
 	
 	@EventHandler
 	public void onJoin(PlayerJoinEvent event) {
-		if (new CashManager().containsAccount(event.getPlayer().getName())) {
+		if (!new CashManager().containsAccount(event.getPlayer().getName())) {
 			new CashManager().createAccount(event.getPlayer().getName());
 		}
 	}

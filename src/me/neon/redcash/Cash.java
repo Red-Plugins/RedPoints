@@ -1,6 +1,6 @@
 package me.neon.redcash;
 
-import org.bukkit.Bukkit;
+import org.bukkit.Bukkit; 
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.neon.redcash.commands.CashCommand;
@@ -20,10 +20,13 @@ public class Cash extends JavaPlugin {
 		messages.reloadConfig();
 		registerCommands();
 		registerListeners();
-		new Mysql().initialize();
+		Mysql mysql = new Mysql();
+		mysql.initialize();
+		mysql.createTable();
 	}
 	
 	public void onDisable() {
+		new Mysql().closeConnection();
 	}
 	
 	void registerCommands() {

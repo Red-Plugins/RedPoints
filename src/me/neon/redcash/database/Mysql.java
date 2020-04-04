@@ -7,8 +7,7 @@ import me.neon.redcash.Cash;
 public class Mysql implements Database {
 	
 	private String url;
-	public Connection connection;
-//	private String tableName = Cash.getInstance().config.getString("Database.Table");
+	public static Connection connection;
 	private String tableName = Cash.getInstance().config.getString("Database.Table");
 	private String hostAdress = Cash.getInstance().config.getString("Database.Host");
 	private String dataBase = Cash.getInstance().config.getString("Database.Database");
@@ -20,7 +19,7 @@ public class Mysql implements Database {
 	public String getTableName() {
 		return tableName;
 	}
-
+	
 	@Override
 	public String getHost() {
 		return hostAdress;
@@ -50,13 +49,10 @@ public class Mysql implements Database {
 	public void initialize() {
 		this.url = "jdbc:mysql://" + getHost() + ":" + getPort() + "/" + getDatabase();
 		try {
-			Class.forName("org.sqlite.JDBC");
 			connection = DriverManager.getConnection(this.url, getUser(), getPassword());
 			System.out.println("[ReflexCash] Conexão montada com sucesso. (Mysql)");
-			createTable();
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			System.out.println("[ReflexCash] FALHA! Erro ao conectar. (Mysql)");
-			closeConnection();
 		}
 	}
 
@@ -64,8 +60,8 @@ public class Mysql implements Database {
 	public void closeConnection() {
 		if (connection != null) {
 			try {
-				this.connection.close();
-				this.connection = null;
+				connection.close();
+				connection = null;
 			} catch (SQLException e) {
 				System.out.println("[ReflexCash] FALHA! Erro ao desconectar. (Mysql)");
 				e.printStackTrace();
@@ -79,7 +75,6 @@ public class Mysql implements Database {
         try {
             st = connection.prepareStatement("CREATE TABLE IF NOT EXISTS `" + tableName + "` (`id` INT NOT NULL AUTO_INCREMENT, `user` VARCHAR(24) NULL, `amount` INT NULL,PRIMARY KEY (`id`));");
             st.executeUpdate();
-            st.close();
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("[ReflexCash] Erro ao criar a tabela. (Mysql)");

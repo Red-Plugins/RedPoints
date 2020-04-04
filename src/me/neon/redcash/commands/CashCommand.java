@@ -27,7 +27,7 @@ public class CashCommand implements CommandExecutor {
 		}
 		if (args.length >= 1) {
 			if (args[0].equalsIgnoreCase("set")) {
-				if (player.hasPermission(Cash.getInstance().config.getString("PermissionCommand"))) {
+				if (!player.hasPermission(Cash.getInstance().config.getString("PermissionCommand"))) {
 					player.sendMessage(new Messages().getMessage("NoPermission"));
 					return true;
 				}
@@ -52,7 +52,7 @@ public class CashCommand implements CommandExecutor {
 			}
 			
 			if (args[0].equalsIgnoreCase("remove")) {
-				if (player.hasPermission(Cash.getInstance().config.getString("PermissionCommand"))) {
+				if (!player.hasPermission(Cash.getInstance().config.getString("PermissionCommand"))) {
 					player.sendMessage(new Messages().getMessage("NoPermission"));
 					return true;
 				}
@@ -77,7 +77,7 @@ public class CashCommand implements CommandExecutor {
 			}
 				
 			if (args[0].equalsIgnoreCase("add")) {
-				if (player.hasPermission(Cash.getInstance().config.getString("PermissionCommand"))) {
+				if (!player.hasPermission(Cash.getInstance().config.getString("PermissionCommand"))) {
 					player.sendMessage(new Messages().getMessage("NoPermission"));
 					return true;
 				}
@@ -111,18 +111,18 @@ public class CashCommand implements CommandExecutor {
 				}
 			}
 			if (args.length == 1) {
-				Player target = Bukkit.getPlayerExact(args[0]);
-				if (target == null) {
-					player.sendMessage(new Messages().getMessage("NonExistentPlayer"));
-					return true;
-				}
-				player.sendMessage(new Messages().getMessage("CashMessage").replace("%player%", target.getName()).replace("%amount%", String.valueOf(new CashManager().getAmount(target.getName()))));
 				if (args[0].equalsIgnoreCase("help") || (args[0].equalsIgnoreCase("ajuda"))) {
 					for (String message : Cash.getInstance().messages.getStringList("CashHelpMessage")) {
 						player.sendMessage(message);
 					}
 					return true;
 				}
+				Player target = Bukkit.getPlayerExact(args[0]);
+				if (target == null) {
+					player.sendMessage(new Messages().getMessage("NonExistentPlayer"));
+					return true;
+				}
+				player.sendMessage(new Messages().getMessage("CashMessage").replace("%player%", target.getName()).replace("%amount%", String.valueOf(new CashManager().getAmount(target.getName()))));
 			}
 		}
 		return false;
