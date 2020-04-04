@@ -12,6 +12,8 @@ import me.neon.redcash.database.Mysql;
 public class CashManager {
 	
 	private String tableName = Cash.getInstance().config.getString("Database.Table");
+	private static CashManager instance = new CashManager();
+	public static CashManager getInstance() { return instance; }
 	
 	public boolean containsAccount(String player) {
 		PreparedStatement st = null;

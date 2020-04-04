@@ -19,9 +19,7 @@ public class Cash extends JavaPlugin {
 		init();
 		registerCommands();
 		registerListeners();
-		Mysql mysql = new Mysql();
-		mysql.initialize();
-		mysql.createTable();
+		Mysql.getInstance().initialize();
 		Tasks t = new Tasks();
 		t.updateToplist();
 		t.updateAccountslist();

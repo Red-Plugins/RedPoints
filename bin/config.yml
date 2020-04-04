@@ -1,6 +1,6 @@
-PermissionAdminCommand: "ReflexCash.command.admin"
+PermissionAdminCommand: "RedCash.command.admin"
 Database:
-  Table: 'reflexcash'
+  Table: 'redcash'
   Host: '35.199.102.26'
   Port: 3306
   Username: 'root'

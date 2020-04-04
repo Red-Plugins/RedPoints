@@ -25,9 +25,10 @@ public class Mysql implements Database {
 		this.url = "jdbc:mysql://" + getHost() + ":" + getPort() + "/" + getDatabase();
 		try {
 			connection = DriverManager.getConnection(this.url, getUser(), getPassword());
-			System.out.println("[ReflexCash] Conexão montada com sucesso. (Mysql)");
+			System.out.println("[RedCash] Conexão montada com sucesso. (Mysql)");
+			createTable();
 		} catch (SQLException e) {
-			System.out.println("[ReflexCash] FALHA! Erro ao conectar. (Mysql)");
+			System.out.println("[RedCash] FALHA! Erro ao conectar. (Mysql)");
 		}
 	}
 
@@ -38,7 +39,7 @@ public class Mysql implements Database {
 				connection.close();
 				connection = null;
 			} catch (SQLException e) {
-				System.out.println("[ReflexCash] FALHA! Erro ao desconectar. (Mysql)");
+				System.out.println("[RedCash] FALHA! Erro ao desconectar. (Mysql)");
 				e.printStackTrace();
 			}
 		}
@@ -52,7 +53,7 @@ public class Mysql implements Database {
             st.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("[ReflexCash] Erro ao criar a tabela. (Mysql)");
+            System.out.println("[RedCash] Erro ao criar a tabela. (Mysql)");
         }
     }
 	
