@@ -13,8 +13,18 @@ CashHelpMessage:
 - 'Use: /cash add (jogador) (quantia).'
 - 'Use: /cash (jogador).'
 - 'Use: /cash top.'
-CashAddMessage: 
-CashRemoveMessage:
-CashSetMessage:
-CashMessage: "§aCash de %player% : %amount% ."
-CashMessage2: "§aCash: %amount% ."
+InvalidNumber: "§cNúmero inválido."
+CashAddMessage: "§aCash adicionado com sucesso."
+CashRemoveMessage: "§aCash removido com sucesso."
+CashSetMessage: "§aCash setado com sucesso."
+CashMessage: "§aCash de §f%player% §a:§f %amount% §a."
+CashMessage2: "§aCash:§f %amount% §a."
+CashStatsMessage:
+- '§f---------------------------'
+- '                             '
+- '§aMysql: §f%mysqlstats%      '
+- '§aAccounts: §f%mysqlaccounts%'
+- '§aVersion: §f1.0             '
+- '§aAuthor: §fzSrNeon_         '
+- '                             '
+- '§f---------------------------' 

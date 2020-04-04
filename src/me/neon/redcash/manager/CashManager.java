@@ -28,6 +28,24 @@ public class CashManager {
 		}
 	}
 	
+	public int getAccounts(ArrayList<String> top) {
+		PreparedStatement st = null;
+		try {
+			st = Mysql.connection.prepareStatement("SELECT * FROM `" + tableName + "` ORDER BY `amount` DESC");
+			ResultSet rs = st.executeQuery();
+			while (rs.next()) {
+				top.add(rs.getString("user"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return top.size();
+	}
+	
+	public int getAccounts() {
+		return Tasks.top.size();
+	}
+	
 	public void createAccount(String player) {
 		PreparedStatement st = null;
 		try {
@@ -103,9 +121,8 @@ public class CashManager {
 		}
 	}
 	
-	public List<String> getTop() {
+	public List<String> updateTop(ArrayList<String> topList) {
 		PreparedStatement st = null;
-		List<String> top = new ArrayList<String>();
 		try {
 			st = Mysql.connection.prepareStatement("SELECT * FROM `" + tableName + "` ORDER BY `amount` DESC");
 			ResultSet rs = st.executeQuery();
@@ -113,12 +130,16 @@ public class CashManager {
 			while (rs.next()) {
 				if (i <= 10) {
 					i++;
-					top.add("§f" + i + "º §3" + rs.getString("user") + ":§b " + rs.getDouble("amount"));
+					topList.add("§a" + i + "º §f" + rs.getString("user") + ":§a " + rs.getInt("amount"));
 				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return top;
+		return topList;
+	}
+	
+	public List<String> getTop() {
+		return Tasks.top;
 	}
 }

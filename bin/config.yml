@@ -1,8 +1,0 @@
-PermissionCommand: "ReflexCash.command.admin"
-Database:
-  Table: 'reflexcash'
-  Host: '35.199.102.26'
-  Port: 3306
-  Username: 'root'
-  Password: 'yuri20032003YURI'
-  Database: 'redplugins'

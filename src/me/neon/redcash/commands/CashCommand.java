@@ -27,12 +27,12 @@ public class CashCommand implements CommandExecutor {
 		}
 		if (args.length >= 1) {
 			if (args[0].equalsIgnoreCase("set")) {
-				if (!player.hasPermission(Cash.getInstance().config.getString("PermissionCommand"))) {
-					player.sendMessage(new Messages().getMessage("NoPermission"));
+				if (args.length < 3) {
+					player.sendMessage(new Messages().getMessage("CashSetUsage"));
 					return true;
 				}
-				if (args.length > 3) {
-					player.sendMessage(new Messages().getMessage("CashSetUsage"));
+				if (!player.hasPermission(Cash.getInstance().config.getString("PermissionAdminCommand"))) {
+					player.sendMessage(new Messages().getMessage("NoPermission"));
 					return true;
 				}
 				Player target = Bukkit.getPlayerExact(args[1]);
@@ -48,16 +48,16 @@ public class CashCommand implements CommandExecutor {
 					return true;
 				}
 				new CashManager().setAmount(target.getName(), amount);
-				new Messages().getMessage("CashSetMessage");
+				player.sendMessage(new Messages().getMessage("CashSetMessage"));
 			}
 			
 			if (args[0].equalsIgnoreCase("remove")) {
-				if (!player.hasPermission(Cash.getInstance().config.getString("PermissionCommand"))) {
-					player.sendMessage(new Messages().getMessage("NoPermission"));
+				if (args.length < 3) {
+					player.sendMessage(new Messages().getMessage("CashRemoveUsage"));
 					return true;
 				}
-				if (args.length > 3) {
-					player.sendMessage(new Messages().getMessage("CashRemoveUsage"));
+				if (!player.hasPermission(Cash.getInstance().config.getString("PermissionCommand"))) {
+					player.sendMessage(new Messages().getMessage("NoPermission"));
 					return true;
 				}
 				Player target = Bukkit.getPlayerExact(args[1]);
@@ -73,16 +73,16 @@ public class CashCommand implements CommandExecutor {
 					return true;
 				}
 				new CashManager().removeAmount(target.getName(), amount);
-				new Messages().getMessage("CashRemoveMessage");
+				player.sendMessage(new Messages().getMessage("CashRemoveMessage"));
 			}
 				
 			if (args[0].equalsIgnoreCase("add")) {
-				if (!player.hasPermission(Cash.getInstance().config.getString("PermissionCommand"))) {
-					player.sendMessage(new Messages().getMessage("NoPermission"));
+				if (args.length < 3) {
+					player.sendMessage(new Messages().getMessage("CashAddUsage"));
 					return true;
 				}
-				if (args.length > 3) {
-					player.sendMessage(new Messages().getMessage("CashAddUsage"));
+				if (!player.hasPermission(Cash.getInstance().config.getString("PermissionCommand"))) {
+					player.sendMessage(new Messages().getMessage("NoPermission"));
 					return true;
 				}
 				Player target = Bukkit.getPlayerExact(args[1]);
@@ -98,7 +98,7 @@ public class CashCommand implements CommandExecutor {
 					return true;
 				}
 				new CashManager().addAmount(target.getName(), amount);
-				new Messages().getMessage("CashAddMessage");
+				player.sendMessage(new Messages().getMessage("CashAddMessage"));
 			}
 			if (args[0].equalsIgnoreCase("top")) {
 				if (args.length > 1) {
