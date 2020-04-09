@@ -1,8 +1,8 @@
 PermissionAdminCommand: "RedCash.command.admin"
 Database:
-  Table: 'redcash'
+  Table: 'cash'
   Host: 'localhost'
   Port: 3306
   Username: 'root'
   Password: ''
-  Database: 'redplugins'
+  Database: 'yourdatabase'

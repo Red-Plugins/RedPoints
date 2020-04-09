@@ -1,5 +1,6 @@
 package me.neon.redcash.utils;
 
+
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 

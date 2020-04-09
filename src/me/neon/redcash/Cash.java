@@ -1,14 +1,12 @@
 package me.neon.redcash;
 
-import org.bukkit.Bukkit;  
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.neon.redcash.commands.CashCommand;
-import me.neon.redcash.commands.CashStatsCommand;
+import me.neon.redcash.utils.*;
+import me.neon.redcash.commands.*;
 import me.neon.redcash.database.Mysql;
-import me.neon.redcash.manager.JoinEvent;
-import me.neon.redcash.manager.Tasks;
-import me.neon.redcash.utils.Configuration;
+import me.neon.redcash.manager.*;
 
 public class Cash extends JavaPlugin {
     
@@ -20,9 +18,6 @@ public class Cash extends JavaPlugin {
 		registerCommands();
 		registerListeners();
 		Mysql.getInstance().initialize();
-		Tasks t = new Tasks();
-		t.updateToplist();
-		t.updateAccountslist();
 	}
 	
 	public void onDisable() {
@@ -31,7 +26,6 @@ public class Cash extends JavaPlugin {
 	
 	void registerCommands() {
 		getCommand("cash").setExecutor(new CashCommand());
-		getCommand("cashstats").setExecutor(new CashStatsCommand());
 	}
 	
 	void registerListeners() {

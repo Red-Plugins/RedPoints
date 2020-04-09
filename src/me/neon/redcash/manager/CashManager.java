@@ -1,11 +1,8 @@
 package me.neon.redcash.manager;
 
-import java.sql.PreparedStatement;
+import java.sql.PreparedStatement; 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
 import me.neon.redcash.Cash;
 import me.neon.redcash.database.Mysql;
 
@@ -28,24 +25,6 @@ public class CashManager {
 		} catch (SQLException e) {
 			return false;
 		}
-	}
-	
-	public int getAccounts(ArrayList<String> top) {
-		PreparedStatement st = null;
-		try {
-			st = Mysql.getInstance().getConnection().prepareStatement("SELECT * FROM `" + tableName + "` ORDER BY `amount` DESC");
-			ResultSet rs = st.executeQuery();
-			while (rs.next()) {
-				top.add(rs.getString("user"));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return top.size();
-	}
-	
-	public int getAccounts() {
-		return Tasks.top.size();
 	}
 	
 	public void createAccount(String player) {
@@ -121,27 +100,5 @@ public class CashManager {
 				e.printStackTrace();
 			}
 		}
-	}
-	
-	public List<String> updateTop(ArrayList<String> topList) {
-		PreparedStatement st = null;
-		try {
-			st = Mysql.getInstance().getConnection().prepareStatement("SELECT * FROM `" + tableName + "` ORDER BY `amount` DESC");
-			ResultSet rs = st.executeQuery();
-			int i = 0;
-			while (rs.next()) {
-				if (i <= 10) {
-					i++;
-					topList.add("§a" + i + "º §f" + rs.getString("user") + ":§a " + rs.getInt("amount"));
-				}
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return topList;
-	}
-	
-	public List<String> getTop() {
-		return Tasks.top;
 	}
 }

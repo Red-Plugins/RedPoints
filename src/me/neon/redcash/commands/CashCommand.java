@@ -1,7 +1,5 @@
 package me.neon.redcash.commands;
 
-import java.util.List; 
-
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command; 
 import org.bukkit.command.CommandExecutor;
@@ -56,7 +54,7 @@ public class CashCommand implements CommandExecutor {
 					player.sendMessage(new Messages().getMessage("CashRemoveUsage"));
 					return true;
 				}
-				if (!player.hasPermission(Cash.getInstance().config.getString("PermissionCommand"))) {
+				if (!player.hasPermission(Cash.getInstance().config.getString("PermissionAdminCommand"))) {
 					player.sendMessage(new Messages().getMessage("NoPermission"));
 					return true;
 				}
@@ -81,7 +79,7 @@ public class CashCommand implements CommandExecutor {
 					player.sendMessage(new Messages().getMessage("CashAddUsage"));
 					return true;
 				}
-				if (!player.hasPermission(Cash.getInstance().config.getString("PermissionCommand"))) {
+				if (!player.hasPermission(Cash.getInstance().config.getString("PermissionAdminCommand"))) {
 					player.sendMessage(new Messages().getMessage("NoPermission"));
 					return true;
 				}
@@ -100,19 +98,10 @@ public class CashCommand implements CommandExecutor {
 				new CashManager().addAmount(target.getName(), amount);
 				player.sendMessage(new Messages().getMessage("CashAddMessage"));
 			}
-			if (args[0].equalsIgnoreCase("top")) {
-				if (args.length > 1) {
-					player.sendMessage(new Messages().getMessage("CashTopUsage"));
-					return true;
-				}
-				List<String> top = new CashManager().getTop();
-				for (String messages : top) {
-					player.sendMessage(messages);
-				}
-			}
+		}
 			if (args.length == 1) {
 				if (args[0].equalsIgnoreCase("help") || (args[0].equalsIgnoreCase("ajuda"))) {
-					for (String message : Cash.getInstance().messages.getStringList("CashHelpMessage")) {
+					for (String message : new Messages().translateColor(Cash.getInstance().messages.getStringList("CashHelpMessage"))) {
 						player.sendMessage(message);
 					}
 					return true;
@@ -124,7 +113,6 @@ public class CashCommand implements CommandExecutor {
 				}
 				player.sendMessage(new Messages().getMessage("CashMessage").replace("%player%", target.getName()).replace("%amount%", String.valueOf(new CashManager().getAmount(target.getName()))));
 			}
-		}
 		return false;
 	}
 
