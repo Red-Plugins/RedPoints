@@ -1,7 +1,14 @@
 name: RedCash
-main: me.neon.redcash.Cash
-version: 1.0
-author: [neonzio]
+description: RedCash
+main: me.neon.redcash.RedCash
+version: 0.9
+author: redplugins
+softdepend: [PlaceHolderAPI]
 commands:
   cash:
-  cashstats:
+    description: Reloads the configuration file
+    default: true
+    usage: /cash reload
+  permissions:
+  cash.*:
+    description: Inherits all plugin permissions

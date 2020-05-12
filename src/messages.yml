@@ -1,17 +1,17 @@
-NoPlayer: "Comandos apenas no servidor!"
-NoPermission: "&cVocê não tem permissão!"
-NonExistentPlayer: "&cJogador inexistente!"
-CashSetUsage: "&cUse: /cash set (jogador) (quantia)."
-CashRemoveUsage: "&cUse: /cash remove (jogador) (quantia)."
-CashAddUsage: "&cUse: /cash add (jogador) (quantia)."
-CashHelpMessage:
-- '&cUse: &f/cash set (jogador) (quantia).'
-- '&cUse: &f/cash remove (jogador) (quantia).'
-- '&cUse: &f/cash add (jogador) (quantia).'
-- '&cUse: &f/cash (jogador).'
-InvalidNumber: "&cNúmero inválido."
-CashAddMessage: "&aCash adicionado com sucesso."
-CashRemoveMessage: "&aCash removido com sucesso."
-CashSetMessage: "&aCash setado com sucesso."
-CashMessage: "&aCash de &f%player% &a:&f %amount% &a."
-CashMessage2: "&aCash:&f %amount% &a."
+commandAdd: "§cAdicionado(s)§f %amount% §cde cash para o jogador específicado."
+commandCreateAccount: "§cConta de§f %player% §ccriada com sucesso."
+commandDeleteAccount: "§cConta de§f %player% §cdeletada com sucesso."
+commandDonate: "§cDo2ado(s)§f %amount% §cde cash ao jogador específicado."
+commandDonateError: "§cVocê não possuí cash suficiente para tal ação."
+commandDonateTarget: "§cVocê recebeu§f %amount% §fde cash do jogador§f %player%§c."
+commandRemove: "§cRemovido(s)§f %amount% §cde cash para o jogador específicado."
+commandRemoveError: "§cEste jogador não possuí cash suficiente para tal ação."
+commandSet: "§cCash do jogador específicado modificado para§f %amount%§c."
+commandReload: "&cConfiguracões recarregadas..."
+commandShow: "§cCash:§f %amount%§c."
+commandReset: "§cConta de§f %player% §cresetada com sucesso."
+commandForceBackup:
+- "§7O backup está sendo forçado, aguarde..."
+- "§cTodos os comandos foram desativados no momento para um backup forçado."
+commandBackup: "§cBackup automático: %state%§c."
+commandBackupError: "§cERRO! §7O modo backup já se encontra %state%§7."

@@ -1,8 +1,12 @@
-PermissionAdminCommand: "RedCash.command.admin"
 Database:
-  Table: 'cash'
-  Host: 'localhost'
+  Mysql: true
+  Host: "35.239.132.204"
   Port: 3306
-  Username: 'root'
-  Password: ''
-  Database: 'yourdatabase'
+  Username: "Neonzio"
+  Password: "redmysqlsenha1234"
+  Database: "redplugins"
+  Table: "redcashtest"
+  
+debugUUID: true
+backupState: true
+versionChecker: true
