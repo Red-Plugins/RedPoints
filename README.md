@@ -13,5 +13,5 @@ Supported in only one version at the moment, which would be: spigot-1.8.8
 
 ## Commands
 
-<img src="https://raw.githubusercontent.com/Red-Plugins/RedPoints/master/assets/commands.png" alt="Commands" title="Commands" align="center" height="396" width="3196"/>
+<img src="https://raw.githubusercontent.com/Red-Plugins/RedPoints/master/assets/commands.png" alt="Commands" title="Commands" align="center" height="637" width="286"/>
 
