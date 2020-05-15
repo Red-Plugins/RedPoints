@@ -60,3 +60,11 @@ backupState: true
 ## Storage Type
 
 This plugin has two forms of storage, either through a yaml configuration or through Mysql. To enable mysql, put 'true' in 'Use' located in 'config.yml', if you want storage by Yaml, just put 'false'.
+
+## Api
+
+*Example:
+
+## Events
+
+*Example:
