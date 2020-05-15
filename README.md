@@ -5,4 +5,6 @@
 [![Servers](https://img.shields.io/bstats/servers/7513)]()
 [![Players](https://img.shields.io/bstats/players/7513)]()
 
+<img src="https://prnt.sc/sh09ft" alt="Heroslender" title="Heroslender" align="right" height="96" width="96"/>
+
 A custom plugin focused on points for players.
