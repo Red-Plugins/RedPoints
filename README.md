@@ -32,3 +32,27 @@ Supported in only one version at the moment, which would be: spigot-1.8.8
 - `redpoints.command.(name_commands_here)` - Replace this (name_commands_here) with the name of the command. For example: `redpoints.command.show`.
 - `repoints.backupalert` - Permission to view the alert message.
 
+## Configuration 
+
+```yaml
+  #Settings for a connection to your database
+Database:
+  #To use Mysql set to 'true', if you don't want to use it, set to 'false'.
+  Use: true
+  #Your host ip adress
+  Host: ""
+  Port: 3306
+  #Your username
+  Username: ""
+  #Your password
+  Password: ""
+  #Your database name
+  Database: ""
+  #Your custom table name
+  Table: ""
+ 
+#Send an alert to all players when an automatic backup is performed 
+backupAlertForPlayers: true 
+#Automatic backup enabled or disabled
+backupState: true
+```
