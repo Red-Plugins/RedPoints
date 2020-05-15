@@ -72,3 +72,5 @@ This plugin has two forms of storage, either through a yaml configuration or thr
 
 ## Curiosities
 
+**LeaderBoard**:
+
