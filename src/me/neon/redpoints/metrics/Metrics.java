@@ -132,7 +132,6 @@ public class Metrics {
         String pluginVersion = plugin.getDescription().getVersion();
 
         data.addProperty("pluginName", pluginName);
-        data.addProperty("id", 7513);
         data.addProperty("pluginVersion", pluginVersion); 
         JsonArray customCharts = new JsonArray();
         for (CustomChart customChart : charts) {
