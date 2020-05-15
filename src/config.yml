@@ -2,12 +2,12 @@
 Database:
   #To use Mysql set to 'true', if you don't want to use it, set to 'false'.
   Use: true
-  Host: "104.197.88.160"
+  Host: ""
   Port: 3306
-  Username: "Neonzio"
-  Password: "redpluginsadmin86910"
-  Database: "redplugins"
-  Table: "redcash"
+  Username: ""
+  Password: ""
+  Database: ""
+  Table: ""
  
 #Send an alert to all players when an automatic backup is performed 
 backupAlertForPlayers: true 
