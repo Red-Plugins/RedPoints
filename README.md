@@ -67,10 +67,45 @@ This plugin has two forms of storage, either through a yaml configuration or thr
 
 ***Example***:
 
+```java 
+  import org.bukkit.Bukkit;
+  import org.bukkit.entity.Player;
+  import org.bukkit.event.EventHandler;
+  import org.bukkit.event.Listener;
+  import org.bukkit.plugin.java.JavaPlugin;
+
+  import me.neon.redpoints.RedPointsAPI;
+  import me.neon.redpoints.event.RedPointsChangeEvent;
+
+  public class Main extends JavaPlugin implements Listener {
+
+    public void onEnable() {
+      Player player = Bukkit.getPlayer("randomName");
+      createAccount(player);
+    }
+
+    public void onDisable() { }
+
+    public void createAccount(Player player) {
+      //Enter the player and the initial value here
+      RedPointsAPI.createAccount(player, 1.0);
+    }
+  }
+```
+
 ## Events
 
 **Example**:
 
+```java
+  @EventHandler
+	public void changeAmount(RedPointsChangeEvent event) {
+		if (event.isCancelled()) return;
+		Player player = (Player) event.getPlayer();
+		event.setChange(100.0);
+		player.sendMessage("Hi");
+	}
+```
 
 ## Spoilers
 
