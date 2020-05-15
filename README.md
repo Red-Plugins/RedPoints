@@ -3,5 +3,6 @@
 # RedPoints
 
 [![Players](https://img.shields.io/bstats/servers/7513)]()
+[![GitHub Issues](https://img.shields.io/bitbucket/issues-raw/Red-Plugins/RedPoints)]()
 
 A custom plugin focused on points for players.
