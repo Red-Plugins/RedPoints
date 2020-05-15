@@ -3,6 +3,5 @@
 # RedPoints
 
 [![Players](https://img.shields.io/bstats/servers/7513)]()
-[![GitHub Issues](https://img.shields.io/bitbucket/issues-raw/heroslender/HeroSpawners)](https://github.com/heroslender/HeroSpawners/issues)
 
 A custom plugin focused on points for players.
