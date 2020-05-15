@@ -11,7 +11,7 @@ A custom plugin focused on points for players.
 
 Supported in only one version at the moment, which would be: spigot-1.8.8
 
-**Note: I'm sorry for my bad English, I'm Brazilian.
+**Note**: I'm sorry for my bad English, I'm Brazilian.
 
 ## Commands
 
