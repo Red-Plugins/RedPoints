@@ -74,4 +74,4 @@ This plugin has two forms of storage, either through a yaml configuration or thr
 
 **LeaderBoard**:
 
-<img src="https://raw.githubusercontent.com/Red-Plugins/RedPoints/master/assets/leaderboard.png" alt="Red-Plugins" title="Red-Plugins" align="center" height="96" width="96"/>
+<img src="https://raw.githubusercontent.com/Red-Plugins/RedPoints/master/assets/leaderboard.png" alt="Red-Plugins" title="Red-Plugins" align="center" height="96" width="992"/>
