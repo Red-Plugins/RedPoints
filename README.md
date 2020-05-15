@@ -28,5 +28,7 @@ Supported in only one version at the moment, which would be: spigot-1.8.8
 
 ## Permissions
 
-- `redpoints.*` Inherits all plugin permissions
+- `redpoints.*` - Inherits all plugin permissions
+- `redpoints.command.(name_commands_here)` - Replace this (name_commands_here) with the name of the command. For example: `redpoints.command.show`.
+- `repoints.backupalert` - Permission to view the alert message.
 
