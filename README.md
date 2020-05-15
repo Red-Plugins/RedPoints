@@ -1,2 +1,2 @@
 # RedPoints
-Customized points system for players
+A custom plugin focused on points for players.
