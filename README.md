@@ -72,7 +72,7 @@ This plugin has two forms of storage, either through a yaml configuration or thr
 **Example**:
 
 
-## Curiosities
+## Spoilers
 
 **LeaderBoard**:
 
