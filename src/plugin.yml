@@ -1,0 +1,14 @@
+name: RedPoints
+description: RedPoints
+main: me.neon.redpoints.RedPoints
+version: 1.0
+author: redplugins
+commands:
+  redpoints:
+    aliases: [rp]
+    description: Reloads the configuration file
+    default: true
+    usage: /redpoints reload
+  permissions:
+  redplugins.*:
+    description: Inherits all plugin permissions
