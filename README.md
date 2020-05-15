@@ -13,7 +13,18 @@ Supported in only one version at the moment, which would be: spigot-1.8.8
 
 ## Commands
 
-- `/redpoints` - Show all available commands
+- `/redpoints` - Show all available commands.
+- `/redpoints backup (forced/true/false)` - Backup functions.
+- `/redpoints remove (player) (amount)` - Remove a specific value.
+- `/redpoints create (player)` - Create an account for the specified player.
+- `/redpoints set (player) (amount)` - Modify the amount of a specific player.
+- `/redpoints donate (player) (amount)` - Donate a specified amount.
+- `/redpoints add (player) (amount)` - Add a specific value for a player.
+- `/redpoints delete (player)` - Delete the account of specified player.
+- `/redpoints leaderboard` - See the list of best.
+- `/redpoints reset (player)` - Restore the account of the specified player.
+- `/redpoints show` - Show your account value.
+- `/redpoints reload` - Reload all settings.
 
 ## Permissions
 
