@@ -78,4 +78,4 @@ This plugin has two forms of storage, either through a yaml configuration or thr
 
 **Automatic Backup**:
 
-<img src="https://raw.githubusercontent.com/Red-Plugins/RedPoints/master/assets/automaticbackup.png" alt="Red-Plugins" title="Red-Plugins" align="center" height="96" width="992"/>
+<img src="https://raw.githubusercontent.com/Red-Plugins/RedPoints/master/assets/automaticbackup.png" alt="Red-Plugins" title="Red-Plugins" align="center" height="46" width="992"/>
