@@ -8,6 +8,7 @@
 ## Introduction
 
 A custom plugin focused on points for players.
+Supported in only one version at the moment, which would be: spigot-1.8.8
 
 ## Commands
 
