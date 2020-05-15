@@ -5,6 +5,6 @@
 [![Servers](https://img.shields.io/bstats/servers/7513)]()
 [![Players](https://img.shields.io/bstats/players/7513)]()
 
-<img src="https://raw.githubusercontent.com/Red-Plugins/RedPoints/master/assets/commands.png" alt="Commands" title="Commands" align="center" height="496" width="3196"/>
+<img src="https://raw.githubusercontent.com/Red-Plugins/RedPoints/master/assets/commands.png" alt="Commands" title="Commands" align="center" height="396" width="3196"/>
 
 A custom plugin focused on points for players.
