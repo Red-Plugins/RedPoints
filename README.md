@@ -2,6 +2,6 @@
 
 # RedPoints
 
-
+[![Players](https://img.shields.io/bstats/players/7513)]
 
 A custom plugin focused on points for players.
